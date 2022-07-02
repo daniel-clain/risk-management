@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "strict":false,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "skipLibCheck": true,
+  },
+  "include": ["code"],
+  "exclude": ["node_modules"]
+}
