@@ -9,6 +9,6 @@
     "jsx": "react",
     "skipLibCheck": true,
   },
-  "include": ["code"],
+  "include": ["src", "src/view/custom.d.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,5 +1,5 @@
 {
-  "game":{
-    "name": "vajuts"
-  }
+  "time": 1234,
+  "level": 2,
+  "paused": false
 }

@@ -1,0 +1,34 @@
+@use 'reset-base'
+@use 'helper-styles' as *
+
+risk-management
+  display: block
+  overflow: hidden
+
+  pre-game
+    @include flex-center
+    start-button, continue-button
+      @include button
+
+
+  game-view
+    height: 100%
+    display: flex
+    background-color: grey
+    justify-content: center
+
+    game-background
+      background: url('./images/house.jpg')  no-repeat
+      margin: auto
+      aspect-ratio: 1.777
+      @include background-image
+      position: relative
+
+
+      the-guy
+        background: url('./images/guy.png') no-repeat
+        aspect-ratio: .461
+        height: 25%
+        background-size: contain
+        @include position-center
+        top: 80%

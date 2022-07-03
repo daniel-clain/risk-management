@@ -3,11 +3,8 @@
 		"version": "1.0.0",
 		"description": "Game based on risk management",
 		"scripts": {
-				"dev": "parcel public/index.html --open",
-				"build": "parcel build code/view/index.tsx --dist-dir ./public",
-				"webpack-serve": "webpack serve",
-				"start": "parcel dist/index.html",
-				"run-server": "nodemon code/server.ts"
+				"dev": "parcel watch public/index.html",
+				"run-server": "nodemon server.ts"
 		},
 		"repository": {
 				"type": "git",
@@ -39,6 +36,9 @@
 		},
 		"devDependencies": {
 				"@parcel/transformer-sass": "2.6.2",
-				"process": "^0.11.10"
+				"assert": "^2.0.0",
+				"console-browserify": "^1.2.0",
+				"process": "^0.11.10",
+				"util": "^0.12.4"
 		}
 }
