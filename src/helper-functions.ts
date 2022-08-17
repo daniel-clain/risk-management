@@ -16,3 +16,7 @@ export function numberLoop(amount, func: (number: number) => void): any[] {
   return returnVal
 }
 
+
+export function twoDec(num: number){
+  return (Math.round((num) * 100) / 100)
+}

@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "noImplicitAny": false,
     "sourceMap": true,
-    "strict":false,
     "module": "commonjs",
     "target": "es6",
     "jsx": "react",
     "skipLibCheck": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true
   },
   "include": ["src", "src/view/custom.d.ts"],
   "exclude": ["node_modules"]

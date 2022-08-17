@@ -1,0 +1,39 @@
+@use "sass:color"
+  
+@mixin flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+
+@mixin button($color: black)
+    color: white
+    font-size: 1rem
+    padding: .5em .75em
+    cursor: pointer
+    transition: all .3s
+    border-radius: .5em
+    user-select: none
+
+    border: outset .25em change-color($color, $saturation: 25%, $lightness: 20%)
+    background: change-color($color, $saturation: 30%, $lightness: 35%) 
+    &:hover
+      background: change-color($color, $saturation: 30%, $lightness: 40%) 
+      border-color: change-color($color, $saturation: 25%, $lightness: 25%)
+    &:active  
+      background: change-color($color, $saturation: 30%, $lightness: 30%) 
+      border-color: change-color($color, $saturation: 25%, $lightness: 15%)
+
+
+@mixin positionCenter
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+@mixin resetBase
+  body
+    margin: 0
+    overflow: hidden
+
+

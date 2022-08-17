@@ -1,5 +1,1 @@
-{
-  "time": 1234,
-  "level": 2,
-  "paused": false
-}
+{"time":0.1,"level":0,"personData":{"feeling":{"food":4,"entertainment":4,"social":4,"accomplishment":4,"comfort":4},"energy":{"food":4,"mental":4,"sleep":4,"drugs":4},"health":{"food":4,"mental":4,"sleep":4,"medication":4},"money":100,"skill":0,"knownThings":[],"gender":"female","name":"chris"}}

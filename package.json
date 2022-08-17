@@ -1,27 +1,18 @@
 {
 		"name": "risk-management",
 		"version": "1.0.0",
-		"description": "Game based on risk management",
+		"private": true,
 		"scripts": {
-				"dev": "parcel watch public/index.html",
-				"run-server": "nodemon server.ts"
+			"dev": "parcel watch src/view/index.html",
+			"run-server": "nodemon server.ts"
 		},
-		"repository": {
-				"type": "git",
-				"url": "git+https://github.com/daniel-clain/risk-management.git"
-		},
-		"author": "",
-		"license": "ISC",
-		"bugs": {
-				"url": "https://github.com/daniel-clain/risk-management/issues"
-		},
-		"homepage": "https://github.com/daniel-clain/risk-management#readme",
 		"dependencies": {
 				"@hot-loader/react-dom": "^17.0.1",
 				"@types/express": "^4.17.13",
 				"@types/node": "^18.0.0",
 				"@types/react": "^18.0.14",
 				"@types/react-dom": "^18.0.5",
+				"body-parser": "^1.20.0",
 				"express": "^4.18.1",
 				"mobx": "^6.6.1",
 				"mobx-react": "^6.2.5",
@@ -35,10 +26,10 @@
 				"typescript": "^4.7.4"
 		},
 		"devDependencies": {
-				"@parcel/transformer-sass": "2.6.2",
-				"assert": "^2.0.0",
-				"console-browserify": "^1.2.0",
-				"process": "^0.11.10",
-				"util": "^0.12.4"
+			"@parcel/transformer-sass": "2.6.2",
+			"assert": "^2.0.0",
+			"console-browserify": "^1.2.0",
+			"process": "^0.11.10",
+			"util": "^0.12.4"
 		}
 }

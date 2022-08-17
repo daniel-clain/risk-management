@@ -1,45 +1,54 @@
 
 import { render } from 'react-dom'
 import * as React from 'react';
-//import { observer } from 'mobx-react';
-import { Game_V } from './game.v';
-import './style.sass'
-import { AppStore } from './store';
-import { is } from '../helper-functions';
 import { observer } from 'mobx-react';
-import { Game } from '../game/game';
-import { runInAction } from 'mobx';
 
-const appStore = new AppStore() 
+import './style.sass'
+import { Game_V } from './views/game.v';
+import { Test_C } from '../testing/test.c';
+
+import { state } from './state';
+import { continueSavedGame, initialSetup, startNewGame } from './actions.service';
+import { StrictMode } from 'react';
+import { GameOver_V } from './views/game-over.v';
+
+
+initialSetup()
 
 const Index = observer(() => {
-  const {game, savedGame, startGame, test, continueSavedGame, cats} = appStore
+
+  const {game, savedGame, testMode} = state
   
-  if(game)
-    return <Game_V {...{game}} /> 
+  return <StrictMode>
 
-  else
-    return <pre-game>
+    {game ?
+      !game.gameOver ?
+        <Game_V {...{game}} />  : <GameOver_V/>
+      :
+      <pre-game>
 
-      <start-button onClick={startGame}>
-        Start New Game
-      </start-button>
-      
-      <test-button onClick={test}>
-        Test
-      </test-button>
-      {is(
-        <continue-button onClick={continueSavedGame}>
-          Continue Existing Game
-        </continue-button>
-      ).if(savedGame)}
-
-  </pre-game>
-
+        <start-button onClick={startNewGame}>
+          Start New Game
+        </start-button>
+        
+        {savedGame?
+          <continue-button onClick={continueSavedGame}>
+            Continue Existing Game
+          </continue-button> : ''
+        }
+      </pre-game>
+    }
+    {testMode?
+      <Test_C /> : ''
+    }
+  </StrictMode>
 })
 
 
 
-const reactRenderingTag = document.createElement('risk-management')
-document.body.appendChild(reactRenderingTag)
-render(<Index />, reactRenderingTag)
+
+render(<Index />, 
+  document.body.appendChild(
+    document.createElement('risk-management')
+  )
+)
