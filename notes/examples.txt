@@ -1,3 +1,26 @@
+
+* unskilled labor
+  - task that requires no skills but takes a long time regardless
+
+* expert
+  - all puzzles are solved quickly all the information of the thing is revealed
+
+* you do it cos you fear the outcome
+  - visible sub thing
+    ~ in 10 seconds, this thing will exprie and the cost will be -$20,000, -90% feeling
+  - semi revealed thing
+    ~ outcome is first sub thing goes away
+    ~ requirements a low requirement for knowledge and skill, but there are lots of them
+    ~ as you 'think' about the 'puzzle' you have a chance each second to discover one of the 'discoverableThings'
+      * discoverableThings can be more clarity on a subThing, a tangent thing, a new sub thing
+
+* you flip a coin with a 50/50 chance to make make $10
+
+* 2 things are expiring at the same time, the clarity is 100%, the work skill is 0, the time it takes the do the thing for each of them it too long to do both, so you have to choose 
+
+
+
+
 addition
 -----------------
 

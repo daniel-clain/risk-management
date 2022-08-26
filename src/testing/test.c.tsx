@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useEffect } from 'react';
-import { state } from '../view/state';
+import { state } from '../state';
 import { giveBobHungryThought } from './bob-hunger-thought-toast-thing';
 
 

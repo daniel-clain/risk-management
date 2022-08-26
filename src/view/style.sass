@@ -13,14 +13,46 @@ risk-management
   font-family: 'Open Sans'
   font-weight: 500
 
-  test-element
-    position: absolute
-    top: 4%
-    right: 4%
-    width: 20%
+  t-container, .container
     display: flex
     flex-direction: column
-    align-items: flex-end
+    padding: 0.2em 0.4em 0.2em 0.2em
+
+  t-row, .row
+    display: flex
+    gap: 1em
+
+  t-heading, .heading
+    display: block
+
+  t-label
+    padding-right: 1rem
+    margin-right: auto
+    white-space: nowrap
+    &::after
+      content: ': '
+  
+  t-data
+    margin-left: auto
+    min-width: 2rem
+    text-align: right
+
+  t-group, .group
+    padding: 0.2rem 0
+    display: flex
+    flex-direction: column
+
+    t-heading, .heading
+        font-size: 1em
+
+  t-container, .container
+    .container, t-container
+      >*:not(t-heading, .heading, button)
+        padding-left: 1em
+        font-size: 0.9em
+
+        
+
 
   pre-game
     @include flexCenter
@@ -41,8 +73,6 @@ risk-management
       img
         height: 100%
 
-    existing-things
-      position: absolute
 
 
     person-element
@@ -54,32 +84,17 @@ risk-management
       top: 80%
       z-index: 1
 
-      #person-info
+      person-info-container
         position: absolute
         left: 100%
         bottom: 0
-        max-width: 10rem
         background: white
         padding: .5rem
         border: 2px solid black
-        font-size: .4rem
+        font-size: 1rem
+        width: 12rem
 
-      t-container
-        width: 100%
-        t-row
-          display: flex
-          flex-wrap: wrap
-
-          t-heading
-            padding: .5em 0
-
-          t-label
-            padding-right: 1em
-            margin-right: auto
-  
-          t-container
-            width: 100%
-            padding-left: 5%
+      
             
 
 
@@ -112,3 +127,56 @@ risk-management
         @include positionCenter
         top: 1rem
         width: 100px
+
+    existing-things-modal
+      left: 2%
+      height: 65%
+      position: absolute
+
+      existing-things
+        background: #e6ffffe8
+        border: 0.01rem solid black
+        padding: 0.7rem .7rem
+        display: flex
+        flex-direction: column
+        gap: .7rem
+        overflow: auto
+        height: 100%
+
+
+        thing-container
+          border: 1px solid
+          padding: 0.5rem
+
+          work-container
+            background-color: #dcb694
+
+          future-events-container
+            background-color: #98b5e3
+  
+          puzzles-container
+            background-color: #f9f193
+
+          possible-outcomes-container
+            background-color: #c5ebbd
+            possible-outcome-container
+              background-color: #f3e9c2a4
+
+
+          work-container
+            work-item-container
+              .do-work-button
+                @include button($color: grey)
+                padding: 0.1rem 0.2rem
+                border-width: 0.1rem
+                font-size: .7rem
+                margin: 0.3rem 0 0 auto
+
+          puzzle-container            
+            .figure-out-button
+              @include button($color: yellow)
+              padding: 0.1rem 0.2rem
+              border-width: 0.1rem
+              font-size: .7rem
+              margin: 0.3rem 0 0 auto
+

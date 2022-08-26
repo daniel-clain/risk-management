@@ -1,18 +1,14 @@
 
 import { observer } from 'mobx-react';
 import * as React from 'react';
-import {useEffect} from 'react';
-import { Person_C } from '../components/person.c';
-import background from './../images/house.jpg';
-import { state } from '../state';
-import { resetGame, saveBeforeUnload } from '../actions.service';
+import { resetGame } from '../../services/main.service';
+import { state } from '../../state';
 
 
 export const GameOver_V = observer(() => {
   const game = state.game!
   const {reason} = game.gameOver!
 
-  useEffect(saveBeforeUnload, [])
 
 
   return <>

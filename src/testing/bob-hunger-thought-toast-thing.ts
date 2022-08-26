@@ -1,7 +1,7 @@
 
 import { Thing } from "../game/thing.type";
 import { Thought } from "../game/thought";
-import { state } from "../view/state";
+import { state } from "../state";
 import './test.sass'
 
 const makeToast: Thing = {
