@@ -2,8 +2,8 @@
 
 
 export type Health = {
-  sleep
-  food
-  mental
-  medication
+  sleep?
+  food?
+  mental?
+  medication?
 }

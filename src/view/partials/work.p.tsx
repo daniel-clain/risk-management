@@ -8,7 +8,6 @@ import { PossibleOutcomes_P } from './possible-outcomes.p';
 export const Work_P = observer((
   {work}:  {work: Work_D}
 ) => {
-  console.log('work :>> ', work);
   const {person} = state.game!
   const {possibleOutcomes, id, workRating, skillTest, completed, workRemaining} = work
   return <>

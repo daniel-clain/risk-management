@@ -11,8 +11,9 @@ import { state } from "../state";
 export function initialSetup(){
   if(state.testMode){
     startNewGame()
+  } else {
+    loadSavedGame()
   }
-  loadSavedGame()
 }
 
 export async function loadSavedGame(): Promise<void>{
@@ -129,6 +130,17 @@ export function getPathToTop(
       t.work?.find(w => {
         if(w.id == work.id){
           pathToTop = [t, w]
+          return true
+        } else return false
+      })
+    )
+  }
+
+  if(puzzle){
+    state.game!.person.knownThings.find(t => 
+      t.puzzles?.find(p => {
+        if(p.id == puzzle.id){
+          pathToTop = [t, p]
           return true
         } else return false
       })

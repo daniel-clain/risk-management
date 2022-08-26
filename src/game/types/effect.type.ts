@@ -25,14 +25,7 @@ export type Effect_D = Node_D & {
     outcomes?: Outcome_D[]
     things?: Thing_D[]
   }
-  stateModifier?: {
-    money?: number
-    feeling?: Feeling
-    energy?: Energy
-    health?: Health
-    skill?: Skill
-    knowledge?: Knowledge
-  }
+  stateModifier?: StateModifier
   outcomeModifier?:{
     existingRef: Outcome_D
     updated: Outcome_D
@@ -50,5 +43,15 @@ export type Effect_D = Node_D & {
 export type Effect_A = {
   [P in keyof Effect_D]?: Effect_D[P]
 } & {
+}
+
+export type StateModifier = {
+  money?: number
+  feeling?: Feeling
+  energy?: Energy
+  health?: Health
+  skill?: Skill
+  knowledge?: Knowledge
+
 }
 

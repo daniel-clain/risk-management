@@ -1,0 +1,17 @@
+* i think it will be hard and take ages to come up with different levels
+* my idea is to make code that generates random challenges
+  - then i play test them, and either mark them as a bad challenge and amend my algorithm, or i save the generated challenge and give it a difficulty rating
+* in theory, after ive added several challenges, then the game can generate levels, 1 - 100 based on all the saved challenges
+  - so if ive rated sever challenges as easy, then they will be in the first 5 levels, but if ive rated challenges as very hard, then they will make up the levels of teh game
+  
+
+* puzzle mechanic
+  - up to 5 levels
+  - number of levels unknown, could be 1
+  - each attempt has a chance to go to the next level based on skill
+  - after solving the last level, you get the outcome
+  - each levels skill challenge can be different but always within 10 of the last one
+  - each level solved reveals an extra portion of clarity, 
+  - clarity doesnt move up linear, it moves up in random chunks, when levels are randomly revealed
+  - the player has to judge whether the probability is high enough to keep trying or try something else
+  

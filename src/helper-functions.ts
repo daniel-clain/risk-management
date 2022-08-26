@@ -1,6 +1,7 @@
 
 export const is = val => ({
-  if: condition => condition ? val : ''
+  if: condition => condition ? val : '',
+  in: (array: any[]) => array.includes(val) ? val : ''
 })
 
 

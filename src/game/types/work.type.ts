@@ -10,6 +10,7 @@ export type Work_D = Action_D & {
   workRemaining: number
   skillTest: Skill
   energy?: number
+  recurring?: boolean
 }
 
 

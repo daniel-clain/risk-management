@@ -1,10 +1,11 @@
 
 import { action, runInAction } from "mobx"
 import { FutureEvent_D } from "../game/types/future-event.type"
-import { twoDec } from "../helper-functions"
+import { Person_D } from "../game/types/person.type"
+import { is, twoDec } from "../helper-functions"
 import { state } from "../state"
 import { handleCurrentAction } from "./actions.service"
-import { chooseOutcome, executeOutcome } from "./outcome.service"
+import { chooseOutcome, executeOutcome, modifyPersonState } from "./outcome.service"
 
 let timeout
 
@@ -26,13 +27,20 @@ export function onTimePasses(){
   const {game} = state
   const {person, time} = game!
 
-  runInAction(() => {
-    game!.time = twoDec(time + .1)
-  })
+  addTime()
+
   if(person.currentAction){
     handleCurrentAction()
   }
   updateFutureEvents()
+
+  personStatsDecay()
+
+  function addTime(){    
+    runInAction(() => {
+      game!.time = twoDec(time + .1)
+    })
+  }
 
   function updateFutureEvents(){
     person.knownThings.forEach(t => {
@@ -66,6 +74,33 @@ export function onTimePasses(){
     }
 
   }
+
+  function personStatsDecay(){
+    const {person} = state.game!
+    modifyPersonState({
+      energy: {
+        drugs: -.1,
+        food: -.1,
+        sleep: -.1,
+        mental: -.1
+      },
+      feeling: {
+        food: -.1,
+      }
+    })
+
+    Object.keys(person).
+    filter(key => is(key).in(
+      <(keyof Person_D)[]>['energy', 'feeling', 'health']
+    )).
+    forEach(key => {
+      Object.keys(person[key]).forEach(prop => {
+        console.log(`taking .1 off ${key} ${prop}`);
+        person[key][prop] -= .1
+      })
+    })
+  }
   
 }
 
+const test: (keyof Person_D)[] = ["energy"]

@@ -1,7 +1,7 @@
 
 export type Energy = {
-  sleep
-  food
-  mental
-  drugs
+  sleep?
+  food?
+  mental?
+  drugs?
 }

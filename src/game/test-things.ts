@@ -13,7 +13,7 @@ const workA: Work_A = {
   possibleOutcomes: [
     {
       probability: 0.3,
-      effects: [/* {stateModifier: {money: 500}} */]
+      effects: [{stateModifier: {money: 500}}]
     },
     {
       probability: 0.3,
@@ -69,6 +69,7 @@ const playMinecraft = createThing({
   id: 'play Minecraft',
   work: [{
     workRemaining: 5,
+    recurring: true,
     possibleOutcomes: [{
       probability: 1,
       effects: [{
@@ -168,12 +169,38 @@ console.log('testThing5 :>> ', testThing5);
   }
 ) */
 
+
+const eatFood = createThing({
+  id: 'Eat Food',
+  work: [{
+    workRemaining: 5,
+    recurring: true,
+    possibleOutcomes: [{
+      probability: 1,
+      effects: [{
+        stateModifier: {
+          feeling: {
+            food: 1
+          },
+          energy: {
+            food: 1
+          },
+          health: {
+            food: 1
+          },
+          money: -1
+        }
+      }]
+    }]
+  }]
+})
+
 export const testThings: Thing_D[] = [
   testThing1,
   //testThing2,
   testThing3,
   testThing4,
-  testThing5
+  //testThing5
 ]
 
 /* 
