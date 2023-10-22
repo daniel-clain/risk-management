@@ -1,4 +1,0 @@
-* you gain skill in 1 of 4 different areas
-* you gain knowledge in 1 of 4 different areas
-
-* the speed you can do something is exponentially relative to your strength in knowledge or skill
